@@ -1,0 +1,34 @@
+table, th, td {
+  border: 1px solid black;
+  margin-top: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+th {
+  background-color: salmon;
+}
+
+.salmon {
+  width: 100px;
+  margin-left: 50px;
+}
+
+h1 {
+  display: inline;
+}
+
+header {
+  margin-top: 25px;
+}
+
+.creator {
+  text-align: center;
+  font-weight: bold;
+}
+
+td:first-child {
+  font-weight: bold;
+  background-color: rgb(8, 0, 0);
+  color: white;
+}
