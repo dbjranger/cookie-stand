@@ -3,7 +3,9 @@ var seattle = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
   maxHourlyCustomers: null,
-  averageCookiesPerHour: null,
+  averageCookiesPerHour: function() {
+    (this.minHourlyCustomers + this.maxHourlyCustomers) / 2;
+  },
   cookiesHourly: [],
   cookieTotal: 0,
 };
@@ -12,7 +14,9 @@ var tokyo = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
   maxHourlyCustomers: null,
-  averageCookiesPerHour: null,
+  averageCookiesPerHour: function() {
+    (this.minHourlyCustomers + this.maxHourlyCustomers) / 2;
+  },
   cookiesHourly: [],
   cookieTotal: 0,
 };
@@ -21,7 +25,9 @@ var dubai = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
   maxHourlyCustomers: null,
-  averageCookiesPerHour: null,
+  averageCookiesPerHour: function() {
+    (this.minHourlyCustomers + this.maxHourlyCustomers) / 2;
+  },
   cookiesHourly: [],
   cookieTotal: 0,
 };
@@ -30,7 +36,9 @@ var paris = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
   maxHourlyCustomers: null,
-  averageCookiesPerHour: null,
+  averageCookiesPerHour: function() {
+    (this.minHourlyCustomers + this.maxHourlyCustomers)
+  },
   cookiesHourly: [],
   cookieTotal: 0,
 };
@@ -39,7 +47,9 @@ var lima = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
   maxHourlyCustomers: null,
-  averageCookiesPerHour: null,
+  averageCookiesPerHour: function() {
+    minHourlyCustomers + maxHourlyCustomers)
+  },
   cookiesHourly: [],
   cookieTotal: 0,
 };
