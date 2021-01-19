@@ -1,6 +1,6 @@
 table, th, td {
   border: 1px solid black;
-  margin-top: 50px;
+  margin-top: 25px;
   width: 50px;
   text-align: center;
 }
@@ -29,6 +29,8 @@ header {
 
 td:first-child {
   font-weight: bold;
-  background-color: rgb(8, 0, 0);
-  color: white;
+}
+
+li {
+  text-align: left;
 }
