@@ -1,4 +1,148 @@
 //Stores the min/max hourly customers, and the average cookies per customer, in object properties
+var allLocations = []; 
+
+function Location(minHourlyCustomers, maxHourlyCustomers, averageCookiesPerCustomer, locationName) {
+      this.totalCustomersDaily = 0;
+      this.minHourlyCustomers = minHourlyCustomers;
+      this.maxHourlyCustomers = maxHourlyCustomers;
+      this.averageCookiesPerCustomer = averageCookiesPerCustomer;
+      this.locationName = locationName;
+    
+      this.cookiesHourly = [];
+      //this.cookieTotal = null;
+      allLocations.push(this)
+}
+
+
+var seattle = new Location(5, 10, 3.2, "Seattle");
+var tokyo = new Location(1, 2, 5.5, "Tokyo");
+var dubai = new Location(3, 8, 2.3, "Dubai");
+var paris = new Location(6, 4, 5.2, "Paris");
+var lima = new Location(7, 7, 7.7, "Lima"); 
+
+
+seattle.minHourlyCustomers = Math.min.apply(Math, this.totalCustomersDaily);
+
+console.log(seattle.minHourCustomers)
+
+
+
+function averageCookiesPerCustomer() {
+    //this.averageCookiesPerCustomer = function() {
+      //  var average = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1)) + (this.minHourlyCustomers) * this.cookiesHourly
+      //};
+}
+
+//function totalCustomersDaily() {
+//  Math.floor(Math.random() * 100)
+//}
+
+//function minHourCustomers() {
+//  
+//}
+
+function maxHourCustomers() {
+  Math.max.apply(Math, this.totalCustomersDaily);
+}
+
+var cookiesHourly = [];
+
+
+for (var i = 0; i < 14; i++) {
+  cookiesHourly.push(Math.floor(Math.random() * 100))
+}
+
+
+var storeTimes = [ " ", "6:00am", "7:00am", "8:00am", "9:00am", "10:00am", "11:00am",
+  "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Daily Location Total"]
+
+var cityLocations = [ "Seattle", "Tokyo", "Dubai", "Paris", "Lima" ]
+
+
+
+function createHeader() {
+  for (var i = 0; i < storeTimes.length; i++) {
+    //Add headers to table
+    var tdParent = document.getElementById("Times");
+    var td = document.createElement("td");
+    var string = storeTimes[i];
+    td.innerHTML = `${string}`;
+    tdParent.appendChild(td);
+  }
+}
+createHeader();
+
+function createCityList() {
+  //Add cities to the left navigation of the table
+    for (var i = 0; i < cityLocations.length; i++) {
+      var tdParent = document.getElementById(cityLocations[i]);
+      var td = document.createElement("td")
+      var string = cityLocations[i];
+      td.innerHTML = `${string}`  
+      tdParent.appendChild(td);
+    }
+} 
+createCityList();
+  
+
+
+
+
+
+
+function createList() { 
+    var li = document.createElement("li");
+    var num = Math.floor(Math.random() * 100);
+    var string = `${num} cookies`;
+    li.innerHTML = `${string}`;
+    ul.appendChild(li);
+};
+
+
+
+
+
+for (var i = 0; i < 13; i++) {
+    var ul = document.getElementById("seattleCookies");
+    createList();
+    var ul = document.getElementById("tokyoCookies");
+    createList();
+    var ul = document.getElementById("dubaiCookies");
+    createList();
+    var ul = document.getElementById("parisCookies");
+    createList();
+    var ul = document.getElementById("limaCookies");
+    createList();
+
+    seattle.cookiesHourly.push(Math.floor(Math.random() * 100));
+    tokyo.cookiesHourly.push(Math.floor(Math.random() * 100));
+    dubai.cookiesHourly.push(Math.floor(Math.random() * 100));
+    paris.cookiesHourly.push(Math.floor(Math.random() * 100));
+    lima.cookiesHourly.push(Math.floor(Math.random() * 100));
+
+};
+
+
+
+
+
+
+/*
+
+ var li = document.createElement("li");
+    var num = Math.floor(Math.random() * 100);
+    var string = `${timeAM}am: ${num} cookies`;
+    li.innerHTML = `${string}`;
+    ul.appendChild(li);
+
+
+
+
+
+
+
+//All of these object literals are replaced with a single constructor function (Above)
+
 var seattle = {
   totalCustomersDaily: [],
   minHourlyCustomers: null,
@@ -53,6 +197,9 @@ var lima = {
   cookiesHourly: [],
   cookieTotal: 0,
 };
+
+
+
 
 //Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 var customersPerHour = Math.floor(Math.random() * 50);
@@ -163,3 +310,5 @@ seattle.minHourlyCustomers = Math.min.apply(Math, seattle.totalCustomersDaily);
 //Display the values of each array as unordered lists in the browser
 
 //Calculating the sum of these hourly totals; your output for each location should look like this:
+
+*/
