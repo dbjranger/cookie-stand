@@ -105,6 +105,7 @@ CookieStore.prototype.generateCookiesAtHour = function () {
   return Math.floor(generateStoreCustomers(this.minCust, this.maxCust) * this.avgCookie);
 };
 
+
 CookieStore.prototype.generateCookiesPerHour = function () {
   for (var i = 0; i < this.openHours.length; i++) {
     var cookieSales = this.generateCookiesAtHour();
@@ -187,7 +188,25 @@ var paris = new CookieStore('Paris', 20, 38, 2.3);
 paris.generateCookiesPerHour();
 stores.push(paris);
 
-console.log(stores);
+
+//console.log(stores[i].cookieSalesPerHour);
+
+var counter = 0
+var results = [];
+var sum = 0;
+for (var i = 0; i < stores.length; i++) {
+  var totalPerHour = stores[i].cookieSalesPerHour[counter]
+  console.log(totalPerHour)
+    for (var y = 0; y < stores[i].cookieSalesPerHour.length; y++) {
+      var totalPerHour2 = stores[i].cookieSalesPerHour[y];
+      console.log(totalPerHour2);
+  }
+}
+  
+
+
+
+
 
 for (var i = 0; i < stores.length; i++) {
   stores[i].displayTable();
