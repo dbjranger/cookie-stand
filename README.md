@@ -7,6 +7,5 @@ Author: Don Bandy
 Links and Resources
 submission PR
 Any Links you used as reference
-Reflections and Comments
-Consider including the answers to your daily journal and submission questions here
-This is also a good place to reflect on the tools and resources used and learned
+Reflections and Comments:
+I learned that the code and project structure that I was setting up was pure crap.  I now understand the importance of a render method location with the objects to clean up the code.  This makes the code SOOOO much more readable.  I also learned how properly set up folders for files and how to use ../ in order to link those pages.  Thank you again for not lettig me slide on this project, because having to go through and fix/update everything has taught me a lot and makes me feel much more confortable with being able to read and understand my code.  There was just way too much on the page before. 
