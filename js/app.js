@@ -234,5 +234,3 @@ for (var i = 0; i < hours.length; i++) {
   li = document.createElement('li');
   li.textContent = `Total: ${lima.totalCookies} cookies`; 
   cityLima.appendChild(li)
-
-
