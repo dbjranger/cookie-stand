@@ -17,4 +17,11 @@ table, th, td {
   margin-top: 25px;
 }
 
+tr {
+  text-align: center;
+  border: 1px solid black;
+}
+
+
+
 
