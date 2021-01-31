@@ -2,98 +2,126 @@
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']; 
 
-const storeLocations = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima',];
+const storeLocations = [];
 
-var SalmonCookieCity = {
-  totalCookies: this.totalCookies,
-  hrCookieList: this.hrCookieList,
-  name: this.name,
-  minCust: this.minCust,
-  maxCust: this.maxCust,
-  avgCookie: this.avgCookie,
-}
+function SalmonCookieCity (name, minCust, maxCust, avgCookie) {
+  this.name = name;
+  this.totalCookies = 0;
+  this.hrCookieList = [];
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookie = avgCookie;
+  };
 
-  //GENERATE A RANDOM NUMBER FOR CUSTOMERS PER HOUR  ///////GETTING ERRORS HERE
+  //GENERATE A RANDOM NUMBER FOR CUSTOMERS PER HOUR  //////
   SalmonCookieCity.prototype.customerPerHour = function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
-  }
+    const y = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
+    console.log(y);
+    return y;
+  };
+
 
   //GENERATE A NUMBER FOR COOKIES PURCHASED PER HOUR  
   SalmonCookieCity.prototype.cookiesPurchasedHourly = function() {
-    return Math.ceil(this.customerPerHour() * this.avgCookie)
-  }
-  
+
+    const x = Math.ceil(this.customerPerHour() * this.avgCookie);
+    console.log(x);
+    return x;
+  };
+
+
   //GENERATE COOKIES PER HOUR FOR ALL HOURS BETWEEN 6AM - 8PM
   SalmonCookieCity.prototype.hourlyCookieList = function() {
       for (var i = 0; i < hours.length; i++) {
         this.hrCookieList.push(this.cookiesPurchasedHourly())
+        this.totalCookies += this.hrCookieList[i];
       }
-  }
+      storeLocations.push(this);
+  };
   
-  //GENERATE THE TOTAL NUMBER OF COOKIES PER CITY
-  SalmonCookieCity.prototype.total = function () {
-    let sum = 1;
-    for (var i = 0; i < hours.length; i++) {
-      sum += this.hrCookieList[i]
-    }
-    this.totalCookies = sum;
-  },
-
-  
-  //GENERATE THE LIST OF TABLE ITEMS ///NEEDS TO BE FIXED//
-
-  // SalmonCookieCity.prototype.render = function () {
-  //   this.hourlyCookieList();
-  //   this.total();
+  // //GENERATE THE TOTAL NUMBER OF COOKIES PER CITY
+  // SalmonCookieCity.prototype.total = function () {
+  //   let sum = 1;
   //   for (var i = 0; i < hours.length; i++) {
-  //     let city = document.getElementById('${this.name}');
-  //     let li = document.createElement('li');
-  //     li.innerHTML = `${hours[i]}: ${this.hrCookieList[i]} cookies`; 
-  //     city.appendChild(li)
-  //   };
-  //   let city = document.getElementById('${this.name}');
-  //   let li = document.createElement('li');
-  //   li.textContent = `Total: ${this.totalCookies} cookies`; 
-  //   city.appendChild(li)
-  // }
+  //     sum += this.hrCookieList[i]
+  //   }
+  //   this.totalCookies = sum;
+  // };
 
-  ///////////////RENDER FUNCTIONS FOR CITIES//////////////////
-  tokyo.render();
-  dubai.render();
-  paris.render();
-  lima.render();
 
-  //CREATE NEW INSTANCES OF EACH STORE LOCATION USING "NEW" FROM THE SINGLE CONSTRUCTOR FUNCTION
-  var seattle = new SalmonCookieCity (0, [], 'Seattle', 23, 65, 6.3)
-  var tokyo = new SalmonCookieCity (0, [], 'Tokyo', 3, 24, 1.2)
-  var dubai = new SalmonCookieCity (0, [], 'Dubai', 11, 38, 3.7)
-  var paris = new SalmonCookieCity (0, [], 'Paris', 20, 38, 2.3)
-  var lima = new SalmonCookieCity (0, [], 'Lima', 2, 16, 4.6)
+
+//////CREATE NEW INSTANCES OF EACH STORE LOCATION USING "NEW" FROM THE SINGLE CONSTRUCTOR FUNCTION
+let seattle = new SalmonCookieCity ('Seattle', 23, 65, 6.3)
+seattle.hourlyCookieList();
+let tokyo = new SalmonCookieCity ('Tokyo', 3, 24, 1.2)
+tokyo.hourlyCookieList();
+let dubai = new SalmonCookieCity ('Dubai', 11, 38, 3.7)
+dubai.hourlyCookieList();
+let paris = new SalmonCookieCity ('Paris', 20, 38, 2.3)
+paris.hourlyCookieList();
+let lima = new SalmonCookieCity ('Lima', 2, 16, 4.6)
+lima.hourlyCookieList();
+
 
 ///////////////CREATE TABLE HEADER///////////////////////
 function createHeader() {
-  for (var i = 0; i < hours.length; i++) {
-    let times = document.getElementById('hours');
+    let cookieStand = document.getElementById('storeHours');
     let th = document.createElement('th');
-    th.innerHTML = `${hours[i]}`; 
-    times.appendChild(th)
+    th.textContent = "Store Locations";
+    cookieStand.appendChild(th);
+  for (let i = 0; i < hours.length; i++) {
+    let th = document.createElement('th');
+    th.textContent = `${hours[i]}`; 
+    cookieStand.appendChild(th)
   }
+    let total = document.createElement('th');
+    total.textContent = "Daily Location Total";
+    cookieStand.appendChild(total);
 }
 
 createHeader();
 
-//////////////////CREATE LEFT SIDE CITY LIST.  CALLING IT A FOOTER   DONT UNDERSTAND DOUBLE LOOP????///////////////////
-function createFooter() {
+////CREATE CITY LIST AND COOKIES PER HOUR DATA FOR EACH LOCATION//////////
+function createCityList() {
   for (var i = 0; i < storeLocations.length; i++) {
-    for (var y = 0; y < storeLocations.length; y++) {
-      if (y < i) {
-        let locations = document.getElementById('city');
-        let th = document.createElement('th');
-        th.innerHTML = `${storeLocations[y]}`; 
-        locations.appendChild(th)
-      } 
+    let locations = document.getElementById('city');
+    let tr = document.createElement('tr');
+    tr.setAttribute('id', `${storeLocations[i].name}`)
+    tr.textContent = `${storeLocations[i].name}`; 
+    for (var j = 0; j < hours.length; j++) {
+      //let cookieNumber = document.getElementById(`${storeLocations[i].name}`);
+      let td = document.createElement('td');
+      td.textContent = `${storeLocations[i].hrCookieList[j]}`;
+      tr.appendChild(td)
     }
+    locations.appendChild(tr)
+    console.log(locations);
   }
 }
 
-createFooter();
+createCityList();
+
+////////ADD FOOTER WHICH IS THE SUM OF ALL CITIES PER HOUR//////////
+function cityGrandTotals() {
+  let cookieNumber = document.getElementById(`totalCookies`);
+  let td = document.createElement('td');
+  td.textContent = `${storeLocations[i]}`;
+  cookieNumber.appendChild(td)
+}    
+
+
+
+
+
+// ///////////////RENDER ALL//////////////////
+// function renderAll () {
+//   for (let i = 0; i < storeLocations.length; i++) {
+//     storeLocations[i].render();
+//     storeLocations[i].render();
+//     storeLocations[i].render();
+//     storeLocations[i].render();
+//     storeLocations[i].render();
+//   }
+// };
+
+// renderAll();
