@@ -126,3 +126,29 @@ function renderTotal() {
 }
 
 renderTotal();
+
+
+
+//////////////Sum up Daily Total Cookies////////////
+
+let sumTotal = 0;
+
+for (let i = 0; i < storeLocations.length; i++) {
+  sumTotal += storeLocations[i].totalCookies
+}
+
+console.log(sumTotal);
+
+
+//////////////TOTAL COOKIES///////////////////////////
+
+function dailyLocationSum () {
+  let locations = document.getElementById('Hourly Totals');
+  let td = document.createElement('td');
+  td.textContent = `${sumTotal}`;
+  locations.appendChild(td)
+}
+
+dailyLocationSum();
+
+
