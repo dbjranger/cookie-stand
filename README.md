@@ -12,4 +12,4 @@ submission PR: https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Acl
 Any Links you used as reference
 
 Reflections and Comments:
-I learned that the code and project structure that I was setting up was pure crap.  I now understand the importance of a render method location with the objects to clean up the code.  This makes the code SOOOO much more readable.  I also learned how properly set up folders for files and how to use ../ in order to link those pages.  Thank you again for not lettig me slide on this project, because having to go through and fix/update everything has taught me a lot and makes me feel much more confortable with being able to read and understand my code.  There was just way too much on the page before. 
+I learned how to access the elements using css selectors rather than relying purely on classes and ids.  I feel much more confident with experimenting and looking up different CSS selectors.  I would like to get more practice at this to reduce redundancy in my CSS and write more elegant code. 
