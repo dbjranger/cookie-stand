@@ -15,13 +15,184 @@ table, th, td {
   border: 1px solid black;
   margin-left: 25px;
   margin-top: 25px;
+  background-color: salmon;
+}
+
+th {
+  color: #111;
+  font-weight: bolder;
+}
+
+thead tr th {
+  width: 35px;
+}
+
+tr th:last-child {
+  background-color: darkolivegreen;
+  width: 50px;
 }
 
 tr {
   text-align: center;
   border: 1px solid black;
+  color: white;
+}
+
+tbody > tr > td {
+  color: black;
+  background-color: cornsilk;
+}
+
+tbody > tr:nth-child(2) {
+  color: black;
+  background-color: rgb(255, 205, 6);
+}
+
+tbody > tr:nth-child(3) {
+  color: black;
+  background-color: rgb(80, 247, 15);
+}
+
+tbody > tr:nth-child(4) {
+  color: black;
+  background-color: rgb(252, 13, 216);
+}
+
+tbody > tr:nth-child(5) {
+  color: black;
+  background-color: rgb(1, 193, 251);
 }
 
 
+/* entire document */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 173, 173);
+}
+
+/* header */
+header {
+  background-color: rgb(253, 254, 255);
+  height: 100px;
+}
+
+nav {
+  width: 960px;
+  margin: auto
+}
+
+header img {
+  margin-top: 12px;
+  float: left;
+}
+
+header span {
+  display: inline-block;
+  line-height: 100px;
+  margin-left: 90px;
+}
+
+header span:nth-child(2) {
+  margin-left: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(241, 96, 96);
+}
+
+/* main */
+main {
+  width: 960px;
+  margin: auto;
+}
+
+header img {
+  width: 200px;
+}
+
+main > :first-child {
+  width: 960px
+}
+
+main img {
+  margin-top: 30px;
+}
+
+main li:first-child {
+  margin-left: 0px;
+}
+
+main li {
+  margin-left: 30px;
+  margin-bottom: 35px;
+  height: 300px;
+  float: left;
+}
+
+main ul img {
+  width: 300px;
+}
+
+main article {
+  width: 50%;
+  float: right;
+  margin-top: 30px;
+}
+
+main h2 {
+  margin-left: 30px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+main p {
+  height: 200px;
+  overflow: auto;
+  margin-top: 5px;
+  margin-left: 30px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+}
+
+article {
+  margin-right: 100px;
+}
+
+article div {
+  background-color: #111;
+  color: #eee;
+  margin-left: 150px;
+  margin-bottom: 25px;
+  padding: 10px 30px;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+article div:hover {
+  background-color: red;
+  transition: 350ms;
+}
+
+section a {
+  color: #eee;
+  padding-top: 30px;
+}
+
+/* footer */
+footer {
+  background-color: rgb(164, 202, 245);
+  height: 130px;
+  margin-top: 80px;
+}
+
+footer img {
+  width: 300px;
+  margin-left: 700px;
+}
 
 
