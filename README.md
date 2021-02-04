@@ -1,13 +1,13 @@
 LAB - 6A
 
 Salmon Cookies
-I built an app that populates a random number of customers per hours and then populates an unordered list per city of how many cookies are needed to be baked at each location to meet the demand.  I have also included the total number of cookies for each store. 
+I built an app that populates a random number of customers per hours and then populates an unordered list per city of how many cookies are needed to be baked at each location to meet the demand.  I have also included the total number of cookies for each store. In addition we've styled the table that contains the data and also the index.html page.  Now Pat's cookies have a nice website to view and look at the different products that Pat's Cookies offers.  
 
 Author: Don Bandy
 
-Links and Resources
+Links and Resources: https://www.w3schools.com/cssref/sel_firstchild.asp
 
-submission PR
+submission PR: https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Aclosed
 
 Any Links you used as reference
 
