@@ -15,22 +15,65 @@ table, th, td {
   border: 1px solid black;
   margin-left: 25px;
   margin-top: 25px;
+  background-color: salmon;
+}
+
+th {
+  color: #111;
+  font-weight: bolder;
+}
+
+thead tr th {
+  width: 35px;
+}
+
+tr th:last-child {
+  background-color: darkolivegreen;
+  width: 50px;
 }
 
 tr {
   text-align: center;
   border: 1px solid black;
+  color: white;
 }
+
+tbody > tr > td {
+  color: black;
+  background-color: cornsilk;
+}
+
+tbody > tr:nth-child(2) {
+  color: black;
+  background-color: rgb(255, 205, 6);
+}
+
+tbody > tr:nth-child(3) {
+  color: black;
+  background-color: rgb(80, 247, 15);
+}
+
+tbody > tr:nth-child(4) {
+  color: black;
+  background-color: rgb(252, 13, 216);
+}
+
+tbody > tr:nth-child(5) {
+  color: black;
+  background-color: rgb(1, 193, 251);
+}
+
 
 /* entire document */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 173, 173);
 }
 
 /* header */
 header {
-  background-color: #444;
+  background-color: rgb(253, 254, 255);
   height: 100px;
 }
 
@@ -56,7 +99,7 @@ header span:nth-child(2) {
 
 nav a {
   text-decoration: none;
-  color: #aaa;
+  color: rgb(241, 96, 96);
 }
 
 /* main */
@@ -83,6 +126,8 @@ main li:first-child {
 
 main li {
   margin-left: 30px;
+  margin-bottom: 35px;
+  height: 300px;
   float: left;
 }
 
@@ -104,13 +149,17 @@ main h2 {
 }
 
 main p {
-  height: 300px;
+  height: 200px;
   overflow: auto;
   margin-top: 5px;
   margin-left: 30px;
   font-style: italic;
   line-height: 20px;
   text-align: center;
+}
+
+article {
+  margin-right: 100px;
 }
 
 article div {
@@ -131,13 +180,19 @@ article div:hover {
 
 section a {
   color: #eee;
+  padding-top: 30px;
 }
 
 /* footer */
 footer {
-  background-color: #444;
+  background-color: rgb(164, 202, 245);
   height: 130px;
-  margin-top: 30px;
+  margin-top: 80px;
+}
+
+footer img {
+  width: 300px;
+  margin-left: 700px;
 }
 
 
