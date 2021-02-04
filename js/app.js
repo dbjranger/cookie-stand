@@ -79,7 +79,6 @@ function render() {
       tr.appendChild(td)
     }
     locations.appendChild(tr)
-    //console.log(locations);
   }
 }
 
@@ -97,22 +96,33 @@ function cityGrandTotals() {
 
 cityGrandTotals();
 
-////TOTALS AT THE BOTTOM //////////////////////
+////PUSHES BOTTOM TOTALS INTO ARRAY//////////////////////
+let cityTotals = [];
 
-
-function grandTotal() {
-  let totalNumber = [];
-  for (let i = 0; i < storeLocations.length; i++) {
-    let result = storeLocations[i].hrCookieList[0];
-    console.log(result);
-    result += 0;
+  for (let i = 0; i < hours.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < storeLocations.length; j++) {
+      sum += storeLocations[j].hrCookieList[i];
+    }
+    cityTotals.push(sum);
   }
-  totalNumber.push(result);
+
+console.log(cityTotals)
+
+
+////////////POSTS BOTTOM TOTALS TO THE DOM///////////////
+
+function renderTotal() {
+    let locations = document.getElementById('city');
+    let tr = document.createElement('tr');
+    tr.setAttribute('id', `Hourly Totals`)
+    tr.textContent = `Hourly Totals`; 
+    for (var j = 0; j < hours.length; j++) {
+      let td = document.createElement('td');
+      td.textContent = `${cityTotals[j]}`;
+      tr.appendChild(td)
+    }
+    locations.appendChild(tr)
 }
-var total = grandTotal(); 
-console.log(total);
 
-//storeLocations[3].hrCookieList[0] + storeLocations[1].hrCookieList[1] + //NUMBER OF CITIES
-
-
-
+renderTotal();
