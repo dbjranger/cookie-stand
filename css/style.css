@@ -75,6 +75,8 @@ body {
 header {
   background-color: rgb(253, 254, 255);
   height: 100px;
+  font-family: Dancing Script;
+  font-size: 25px;
 }
 
 nav {
@@ -144,8 +146,9 @@ main article {
 main h2 {
   margin-left: 30px;
   margin-bottom: 25px;
-  font-size: 20px;
+  font-size: 50px;
   text-align: center;
+  font-family: Hanalei;
 }
 
 main p {
