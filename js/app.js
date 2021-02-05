@@ -13,8 +13,6 @@ function SalmonCookieCity (name, minCust, maxCust, avgCookie) {
   this.avgCookie = avgCookie;
   };
 
-  
-
   //GENERATE A RANDOM NUMBER FOR CUSTOMERS PER HOUR  //////
   SalmonCookieCity.prototype.customerPerHour = function() {
     const perHourCustomers = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
@@ -107,9 +105,6 @@ let cityTotals = [];
     cityTotals.push(sum);
   }
 
-console.log(cityTotals)
-
-
 ////////////POSTS BOTTOM TOTALS TO THE DOM///////////////
 
 function renderTotal() {
@@ -127,8 +122,6 @@ function renderTotal() {
 
 renderTotal();
 
-
-
 //////////////Sum up Daily Total Cookies////////////
 
 let sumTotal = 0;
@@ -136,9 +129,6 @@ let sumTotal = 0;
 for (let i = 0; i < storeLocations.length; i++) {
   sumTotal += storeLocations[i].totalCookies
 }
-
-console.log(sumTotal);
-
 
 //////////////TOTAL COOKIES///////////////////////////
 
