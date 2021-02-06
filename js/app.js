@@ -141,4 +141,13 @@ function dailyLocationSum () {
 
 dailyLocationSum();
 
+//  Upon submission of the HTML form, create an event handler that creates a new instance of a cookie stand that appends to the table upon form submission.//
+
+// let newCookieStand = new SalmonCookieCity (name, minCust, maxCust, avgCookie) {
+
+  
+// newCookieStand();  
+  
+ 
+// <button onclick="displayDate()">The time is?</button>
 
