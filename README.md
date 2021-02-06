@@ -5,9 +5,13 @@ I built an app that populates a random number of customers per hours and then po
 
 Author: Don Bandy
 
-Links and Resources: https://www.w3schools.com/cssref/sel_firstchild.asp
+Links and Resources: 
+https://www.w3schools.com/cssref/sel_firstchild.asp, 
+https://www.w3schools.com/tags/tag_fieldset.asp
 
-submission PR: https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Aclosed
+submission PR: 
+https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Aclosed
+
 
 Any Links you used as reference
 
