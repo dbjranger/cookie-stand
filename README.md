@@ -5,9 +5,14 @@ I built an app that populates a random number of customers per hours and then po
 
 Author: Don Bandy
 
-Links and Resources: https://www.w3schools.com/cssref/sel_firstchild.asp
+Links and Resources: 
+https://www.w3schools.com/cssref/sel_firstchild.asp, 
+https://www.w3schools.com/tags/tag_fieldset.asp,
+https://stackoverflow.com/questions/34057595/allow-2-decimal-places-in-input-type-number/34057860
 
-submission PR: https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Aclosed
+submission PR: 
+https://github.com/dbjranger/cookie-stand/pulls?q=is%3Apr+is%3Aclosed
+
 
 Any Links you used as reference
 
