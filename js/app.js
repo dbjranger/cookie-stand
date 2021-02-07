@@ -169,7 +169,6 @@ function handleSubmit(event) {
 // NEED TO CLEAR THE TABLE BEFORE REPOSTING ////
   document.querySelector("tbody").textContent = "";
 
-
 // REPOST THE TABLE DATA INCLUDING THE NEW FORM DATA //
   function render() {
     for (var i = 0; i < storeLocations.length; i++) {
@@ -188,6 +187,7 @@ function handleSubmit(event) {
   render();
   renderTotal();
   dailyLocationSum();
+  cityGrandTotals();
 }
 
 
