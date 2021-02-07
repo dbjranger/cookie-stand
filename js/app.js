@@ -166,28 +166,39 @@ function handleSubmit(event) {
   newCookieStand.hourlyCookieList();
   console.log(newCookieStand.hrCookieList);
 
-// NEED TO CLEAR THE TABLE BEFORE REPOSTING ////
-  document.querySelector("tbody").textContent = "";
+  // Ensure MIN CUSTOMERS IS LOWER THAN MAX CUST //
+  // if (minimumCustomers < maximumCustomers) {
+  //   alert("Minimum Customer Count must be lower than Maximum Customer Count")
+  // };
 
-// REPOST THE TABLE DATA INCLUDING THE NEW FORM DATA //
-  function render() {
-    for (var i = 0; i < storeLocations.length; i++) {
-      let locations = document.getElementById('city');
-      let tr = document.createElement('tr');
-      tr.setAttribute('id', `${storeLocations[i].name}`)
-      tr.textContent = `${storeLocations[i].name}`; 
-      for (var j = 0; j < hours.length; j++) {
-        let td = document.createElement('td');
-        td.textContent = `${storeLocations[i].hrCookieList[j]}`;
-        tr.appendChild(td)
+  // REPOST THE TABLE DATA INCLUDING THE NEW FORM DATA //
+    function render() {
+      for (var i = 0; i < storeLocations.length; i++) {
+        let locations = document.getElementById('city');
+        let tr = document.createElement('tr');
+        tr.setAttribute('id', `${storeLocations[i].name}`)
+        tr.textContent = `${storeLocations[i].name}`; 
+        for (var j = 0; j < hours.length; j++) {
+          let td = document.createElement('td');
+          td.textContent = `${storeLocations[i].hrCookieList[j]}`;
+          tr.appendChild(td)
+        }
+        locations.appendChild(tr)
       }
-      locations.appendChild(tr)
     }
+    //DO NOT ALLOW THE FORM TO BE SUBMITTED WITH EMPTY FIELDS//
+    if ((city || minimumCustomers || maximumCustomers || averageCookies) == "") {
+    alert("No empty field allowed!");
+  } else if (minimumCustomers > maximumCustomers) {
+    alert("Max Customers must be higher than Min Customers");
+  } else {
+    // NEED TO CLEAR THE TABLE BEFORE REPOSTING //
+    document.querySelector("tbody").textContent = "";
+    render();
+    renderTotal();
+    dailyLocationSum();
+    cityGrandTotals();
   }
-  render();
-  renderTotal();
-  dailyLocationSum();
-  cityGrandTotals();
 }
 
 
