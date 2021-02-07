@@ -43,26 +43,10 @@ tbody > tr > td {
   background-color: cornsilk;
 }
 
-tbody > tr:nth-child(2) {
+tbody > tr:nth-child(even) {
   color: black;
   background-color: rgb(255, 205, 6);
 }
-
-tbody > tr:nth-child(3) {
-  color: black;
-  background-color: rgb(80, 247, 15);
-}
-
-tbody > tr:nth-child(4) {
-  color: black;
-  background-color: rgb(252, 13, 216);
-}
-
-tbody > tr:nth-child(5) {
-  color: black;
-  background-color: rgb(1, 193, 251);
-}
-
 
 /* entire document */
 
@@ -220,8 +204,9 @@ input {
   margin-left: 25px;
 }
 
-input:last-of-type {
-  margin-left: 375px;
+button {
+  margin-left: 200px;
+  background-color: salmon;
   margin-bottom: 15px;
 }
 

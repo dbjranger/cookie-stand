@@ -94,7 +94,7 @@ function cityGrandTotals() {
 
 cityGrandTotals();
 
-////PUSHES BOTTOM TOTALS INTO ARRAY//////////////////////
+////PUSHES BOTTOM HOURLY TOTALS INTO ARRAY//////////////////////
 let cityTotals = [];
 
   for (let i = 0; i < hours.length; i++) {
@@ -105,7 +105,7 @@ let cityTotals = [];
     cityTotals.push(sum);
   }
 
-////////////POSTS BOTTOM TOTALS TO THE DOM///////////////
+////////////POSTS BOTTOM HOURLY TOTALS TO THE DOM///////////////
 
 function renderTotal() {
     let locations = document.getElementById('city');
@@ -141,13 +141,66 @@ function dailyLocationSum () {
 
 dailyLocationSum();
 
-//  Upon submission of the HTML form, create an event handler that creates a new instance of a cookie stand that appends to the table upon form submission.//
+//GET ELEMENT FROM DOM //
 
-// let newCookieStand = new SalmonCookieCity (name, minCust, maxCust, avgCookie) {
+let myForm = document.querySelector("form");
 
+// ADD EVENT LISTENER //
+myForm.addEventListener("submit", handleSubmit);
+
+// FUNCTION FOR OUR EVENT LISTENER //
+
+function handleSubmit(event) {
+
+  //eliminate default behavior so form is not cleared out
+  event.preventDefault();
+
+  // create variables to capture the response in each field for the form //
+  let city = event.target.newLocation.value;
+  let minimumCustomers = +event.target.minCust.value;
+  let maximumCustomers = +event.target.maxCust.value;
+  let averageCookies = +event.target.avgCookie.value;
   
-// newCookieStand();  
-  
- 
-// <button onclick="displayDate()">The time is?</button>
+  // CREATE NEW INSTANCE OF A COOKIE STAND BASED ON USER SUBMITTING FORM//
+  let newCookieStand = new SalmonCookieCity (city, minimumCustomers, maximumCustomers, averageCookies)
+  newCookieStand.hourlyCookieList();
+  console.log(newCookieStand.hrCookieList);
+
+  // Ensure MIN CUSTOMERS IS LOWER THAN MAX CUST //
+  // if (minimumCustomers < maximumCustomers) {
+  //   alert("Minimum Customer Count must be lower than Maximum Customer Count")
+  // };
+
+  // REPOST THE TABLE DATA INCLUDING THE NEW FORM DATA //
+    function render() {
+      for (var i = 0; i < storeLocations.length; i++) {
+        let locations = document.getElementById('city');
+        let tr = document.createElement('tr');
+        tr.setAttribute('id', `${storeLocations[i].name}`)
+        tr.textContent = `${storeLocations[i].name}`; 
+        for (var j = 0; j < hours.length; j++) {
+          let td = document.createElement('td');
+          td.textContent = `${storeLocations[i].hrCookieList[j]}`;
+          tr.appendChild(td)
+        }
+        locations.appendChild(tr)
+      }
+    }
+    //DO NOT ALLOW THE FORM TO BE SUBMITTED WITH EMPTY FIELDS//
+    if ((city || minimumCustomers || maximumCustomers || averageCookies) == "") {
+    alert("No empty field allowed!");
+  } else if (minimumCustomers > maximumCustomers) {
+    alert("Max Customers must be higher than Min Customers");
+  } else {
+    // NEED TO CLEAR THE TABLE BEFORE REPOSTING //
+    document.querySelector("tbody").textContent = "";
+    render();
+    renderTotal();
+    dailyLocationSum();
+    cityGrandTotals();
+  }
+}
+
+
+
 
