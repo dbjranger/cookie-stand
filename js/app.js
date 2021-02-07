@@ -166,10 +166,11 @@ function handleSubmit(event) {
   newCookieStand.hourlyCookieList();
   console.log(newCookieStand.hrCookieList);
 
-  // ADD NEW STAND FROM THE FROM TO THE DOM//
-
 // NEED TO CLEAR THE TABLE BEFORE REPOSTING ////
+  document.querySelector("tbody").textContent = "";
 
+
+// REPOST THE TABLE DATA INCLUDING THE NEW FORM DATA //
   function render() {
     for (var i = 0; i < storeLocations.length; i++) {
       let locations = document.getElementById('city');
@@ -184,10 +185,9 @@ function handleSubmit(event) {
       locations.appendChild(tr)
     }
   }
-  
   render();
-  
-
+  renderTotal();
+  dailyLocationSum();
 }
 
 
