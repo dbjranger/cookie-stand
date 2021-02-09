@@ -31,7 +31,7 @@ function SalmonCookieCity(name, minCust, maxCust, avgCookie) {
   this.render();
 }
 
-//GENERATE A RANDOM NUMBER FOR CUSTOMERS PER HOUR  //////
+// GENERATE A RANDOM NUMBER FOR CUSTOMERS PER HOUR //
 SalmonCookieCity.prototype.customerPerHour = function () {
   const perHourCustomers =
     Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) +
@@ -39,13 +39,13 @@ SalmonCookieCity.prototype.customerPerHour = function () {
   return perHourCustomers;
 };
 
-//GENERATE A RANDOM NUMBER FOR COOKIES PURCHASED PER HOUR
+// GENERATE A RANDOM NUMBER FOR COOKIES PURCHASED PER HOUR //
 SalmonCookieCity.prototype.cookiesPurchasedHourly = function () {
   const perHourCookies = Math.ceil(this.customerPerHour() * this.avgCookie);
   return perHourCookies;
 };
 
-//// GENERATE COOKIES PER HOUR FOR ALL HOURS BETWEEN 6AM - 8PM  ///////////////
+// GENERATE COOKIES PER HOUR FOR ALL HOURS BETWEEN 6AM - 8PM //
 SalmonCookieCity.prototype.hourlyCookieList = function () {
   for (var i = 0; i < hours.length; i++) {
     this.hrCookieList.push(this.cookiesPurchasedHourly());
@@ -72,14 +72,14 @@ SalmonCookieCity.prototype.render = function () {
   locations.appendChild(tr);
 };
 
-//////CREATE NEW INSTANCES OF EACH STORE LOCATION USING "NEW" FROM THE SINGLE CONSTRUCTOR FUNCTION
+// CREATE NEW INSTANCES OF EACH STORE LOCATION //
 let seattle = new SalmonCookieCity("Seattle", 23, 65, 6.3);
 let tokyo = new SalmonCookieCity("Tokyo", 3, 24, 1.2);
 let dubai = new SalmonCookieCity("Dubai", 11, 38, 3.7);
 let paris = new SalmonCookieCity("Paris", 20, 38, 2.3);
 let lima = new SalmonCookieCity("Lima", 2, 16, 4.6);
 
-///////////////CREATE TABLE HEADER///////////////////////
+// CREATE TABLE HEADER //
 function createHeader() {
   let cookieStand = document.getElementById("storeHours");
   let th = document.createElement("th");
@@ -97,8 +97,7 @@ function createHeader() {
 
 createHeader();
 
-////PUSHES BOTTOM HOURLY TOTALS INTO ARRAY//////////////////////
-
+// PUSHES BOTTOM HOURLY TOTALS INTO ARRAY //
 function createCityTotals() {
   cityTotals = [];
   for (let i = 0; i < hours.length; i++) {
@@ -110,7 +109,7 @@ function createCityTotals() {
   }
 }
 
-////////////POSTS BOTTOM HOURLY TOTALS TO THE DOM///////////////
+// POSTS BOTTOM HOURLY TOTALS TO THE DOM //
 function renderTotal() {
   createCityTotals();
   let sumTotal = 0;
@@ -141,15 +140,13 @@ let myForm = document.querySelector("form");
 // FUNCTION FOR OUR EVENT LISTENER //
 
 function handleSubmit(event) {
-  //eliminate default behavior so form is not cleared out
+  // eliminate default behavior so form is not cleared out //
   event.preventDefault();
-
   // create variables to capture the response in each field for the form //
   let city = event.target.newLocation.value;
   let minimumCustomers = +event.target.minCust.value;
   let maximumCustomers = +event.target.maxCust.value;
   let averageCookies = +event.target.avgCookie.value;
-
   // CREATE NEW INSTANCE OF A COOKIE STAND BASED ON USER SUBMITTING FORM//
   let newCookieStand = new SalmonCookieCity(
     city,
@@ -160,17 +157,13 @@ function handleSubmit(event) {
 
   if (minimumCustomers > maximumCustomers) {
     alert("Max Customers must be higher than Min Customers");
-    // } else if (newCookieStand.storeLocations == city) {
-    //   alert("This City already exists!")
   } else {
-    // NEED TO CLEAR THE TABLE BEFORE REPOSTING //
-    // document.querySelector("tbody").textContent = "";
-    tableFooter.innerHTML = "";
-    //tableFooter.removeChild(tableFooter.firstChild);
+    //tableFooter.innerHTML = "";
+    tableFooter.removeChild(tableFooter.firstChild);
+    console.log(tableFooter.removeChild(tableFooter.firstChild));
     renderTotal();
   }
 }
 
 // ADD EVENT LISTENER //
 myForm.addEventListener("submit", handleSubmit);
-
