@@ -17,13 +17,13 @@
   <fieldset>
     <legend>Add New Cookie Stand:</legend>
     <label for="newLocation">City:</label>
-    <input type="text" id="newLocation" name="newLocation" placeholder="Name of City"><br><br>
+      <input type="text" id="newLocation" name="newLocation" placeholder="Name of City" required><br><br>
     <label for="minCust">Minimum Customers:</label>
-    <input type="number" id="minCust" name="minCust" min="0" placeholder="Lower than Max"><br><br>
+      <input type="number" id="minCust" name="minCust" min="0" placeholder="Lower than Max" required><br><br>
     <label for="maxCust">Maximum Customers:</label>
-    <input type="number" id="maxCust" name="maxCust" min="0" placeholder="Higher than Min"><br><br>
+      <input type="number" id="maxCust" name="maxCust" min="0" placeholder="Higher than Min" required><br><br>
     <label for="avgCookie">Average Cookies per Person:</label>
-    <input type="number" id="avgCookie" name="avgCookie" min="0" step=".1"><br><br>
+      <input type="number" id="avgCookie" name="avgCookie" min="0" step=".1" required><br><br>
     <button type="submit">Submit</button>
   </fieldset>
 </form>
@@ -40,11 +40,8 @@
       <tbody id="city">
         
       </tbody>
-      <tfoot>
-        <!-- FOOTER BELOW -->
-        <tr id="totalCookies">
+      <tfoot id="tablefooter">
           
-        </tr>
       </tfoot> 
     </table>
   
