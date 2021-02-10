@@ -15,7 +15,7 @@ table, th, td {
   border: 1px solid black;
   margin-left: 25px;
   margin-top: 25px;
-  background-color: salmon;
+  background-color: rgb(253, 206, 200);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -29,14 +29,21 @@ thead tr th {
 }
 
 tr th:last-child {
-  background-color: darkolivegreen;
-  width: 50px;
+  background-color: rgb(139, 199, 36);
+  width: 100px;
 }
 
-tr {
+tr th:first-child {
+  background-color:rgb(253, 254, 255);
+}
+
+td:last-child {
   text-align: center;
   border: 1px solid black;
-  color: white;
+  color: rgb(20, 1, 1);
+  font-weight: bolder;
+  background-color: rgb(139, 199, 36);
+  
 }
 
 tbody > tr > td {
