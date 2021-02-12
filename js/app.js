@@ -158,9 +158,7 @@ function handleSubmit(event) {
   if (minimumCustomers > maximumCustomers) {
     alert("Max Customers must be higher than Min Customers");
   } else {
-    //tableFooter.innerHTML = "";
-    tableFooter.removeChild(tableFooter.firstChild);
-    console.log(tableFooter.removeChild(tableFooter.firstChild));
+    tableFooter.innerHTML = "";
     renderTotal();
   }
 }
